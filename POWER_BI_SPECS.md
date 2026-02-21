@@ -5,8 +5,12 @@
 Permettre à un Chef de Dépôt Logistique d'identifier en 5 secondes quelles pompes de carburant risquent de tomber en panne dans les prochaines 48h afin d'envoyer un technicien de maintenance préventive (ROI : Éviter l'interruption des camions de livraison).
 
 ## 🗂️ Sources de Données (Intégration Power BI)
-1. **Source 1 :** Fichier CSV `Processed_Telemetry.csv` (Historique des capteurs).
-2. **Source 2** : Fichier Python `rf_failure_predict.joblib` (Intégration possible avec les scripts Python interactifs dans Power BI pour afficher les scores de probabilités générés par notre modèle Random Forest).
+
+> 💡 **Le "Summum" (Architecture Cloud)** : Les données prédictives étant hébergées sur le dépôt GitHub public du projet, vous pouvez éviter un import fichier plat local et **choisir la "Connexion Web" dans Power BI**. 
+**Avantage :** À chaque nouvelle prédiction du moteur IA poussée sur le GitHub (Git push), le Dashboard Power BI des directeurs se rafraîchit à distance, sans que les ingénieurs n'aient à transférer de nouveaux fichiers localement !
+
+1. **Source Principale (via GitHub Web) :** URL `https://raw.githubusercontent.com/Lkb-2905/Predictive-Maintenance-Dashboard/main/data/processed_telemetry.csv` (Historique des capteurs + Prédictions IA ajoutées).
+2. **Source Optionnelle (Local) :** Fichier Python `rf_failure_predict.joblib` (Intégration locale possible avec les scripts interactifs Python dans Power BI).
 
 ## 🎨 Modèle de Conception (Design)
 - **Couleurs Corporate :** Fond gris clair industriel, indicateurs en bleu et rouge (Codes couleurs TotalEnergies).
