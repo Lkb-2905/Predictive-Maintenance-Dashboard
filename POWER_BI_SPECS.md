@@ -1,8 +1,8 @@
 # Spécifications Fonctionnelles : 
-# Tableau de Bord Power BI Maintenance Prédictive (TotalEnergies)
+# Tableau de Bord Power BI Maintenance Prédictive (Camrail / Bolloré Logistics)
 
 ## 🎯 Objectif Business
-Permettre à un Chef de Dépôt Logistique d'identifier en 5 secondes quelles pompes de carburant risquent de tomber en panne dans les prochaines 48h afin d'envoyer un technicien de maintenance préventive (ROI : Éviter l'interruption des camions de livraison).
+Permettre à un Chef de Gare de Fret d'identifier en 5 secondes quelles locomotives risquent de tomber en panne dans les prochaines 48h afin d'envoyer un technicien de maintenance préventive (ROI : Éviter l'interruption des trains de marchandises).
 
 ## 🗂️ Sources de Données (Intégration Power BI)
 
@@ -13,17 +13,17 @@ Permettre à un Chef de Dépôt Logistique d'identifier en 5 secondes quelles po
 2. **Source Optionnelle (Local) :** Fichier Python `rf_failure_predict.joblib` (Intégration locale possible avec les scripts interactifs Python dans Power BI).
 
 ## 🎨 Modèle de Conception (Design)
-- **Couleurs Corporate :** Fond gris clair industriel, indicateurs en bleu et rouge (Codes couleurs TotalEnergies).
+- **Couleurs Corporate :** Fond gris clair industriel, indicateurs en bleu corporate et orange (Codes couleurs Camrail).
 - **Mode :** Sombre (Dark Mode industriel, apprécié dans les salles de contrôle logistique).
 
 ## ⚙️ Construction des Visuels (Maquettes Écrans)
 
 ### Écran 1 : La Salle de Contrôle (Overview)
 *C'est l'écran par défaut du manager opérationnel*
-- **KPI Haut Gauche** : Nombre de pompes monitorées (En Vert).
+- **KPI Haut Gauche** : Nombre de locomotives monitorées (En Vert).
 - **KPI Haut Droite** : "Alerte de Défaillance" - Affiche le nombre d'équipements dont le taux de défaillance prédit (Scikit-Learn) > 85%. En Rouge si > 0.
 - **Camembert ou Graphique en Donut** : Répartition de l'état des machines (Fonctionnel / Risque Faible / Risque Critique).
-- **Jauge Centrale** : Pression globale moyenne des pompes du site en temps réel.
+- **Jauge Centrale** : Pression d'huile globale moyenne des locomotives du site en temps réel.
 
 ### Écran 2 : Vision Data Science (Zoom Ingénieur Maintenance)
 *C'est l'écran pour l'ingénieur de fiabilité*
@@ -35,4 +35,4 @@ Permettre à un Chef de Dépôt Logistique d'identifier en 5 secondes quelles po
 
 ## 💡 Astuce pour l'Entretien avec le Recruteur
 Lors de votre présentation, précisez : 
-> *"Habituellement, l'industrie fait de la maintenance à date fixe (ex: réviser les pompes tous les 6 mois). Mon Dashboard Power BI et mon pipeline Data Science permettent de passer d'une maintenance préventive à une **maintenance prescriptive**, ne ciblant que les équipements à l'agonie. Cela réduit les coûts d'interventions de 30%."*
+> *"Habituellement, l'industrie fait de la maintenance à date fixe (ex: réviser les locomotives tous les 6 mois). Mon Dashboard Power BI et mon pipeline Data Science permettent de passer d'une maintenance préventive à une **maintenance prescriptive**, ne ciblant que les équipements à l'agonie. Cela réduit les coûts d'interventions de 30%."*

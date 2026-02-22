@@ -2,7 +2,7 @@
 ⚡ PM-D : Predictive Maintenance Dashboard
 Gestion de Crise • Continuité Logistique • Résilience IA
 
-Classification: Confidentiel (Interne TotalEnergies) | Version: 1.0.0
+Classification: Confidentiel (Interne Camrail / Bolloré Logistics) | Version: 1.0.0
 Responsable: KAMENI TCHOUATCHEU GAETAN BRUNEL
 
 🔍 Analyse BIA • 🛡️ Stratégies PCA • 🔄 Procédures PRA • 📝 Maintenance MCO
@@ -21,7 +21,7 @@ Responsable: KAMENI TCHOUATCHEU GAETAN BRUNEL
 
 ## 🚨 CONTEXTE ET ENJEUX CRITIQUES
 Ce plan définit la stratégie de résilience opérationnelle du **Dashboard de Maintenance Prédictive (PM-D)**.
-Dans le contexte critique d'un Dépôt Pétrolier TotalEnergies, l'incapacité à anticiper la panne d'une pompe de distribution bloque les camions citernes et casse la flux logistique de toute une région (Coût d'arrêt majeur).
+Dans le contexte critique d'une Gare de Fret (Camrail / Douala), l'incapacité à anticiper la panne d'une locomotive de marchandise bloque les voies et casse le flux logistique de toute la région (Coût d'arrêt majeur).
 
 **Objectifs du PCR :**
 * **Disponibilité Data :** Garantir que les gestionnaires aient accès aux indicateurs Power BI basiques, même si l'IA est hors ligne.
@@ -36,7 +36,7 @@ Dans le contexte critique d'un Dépôt Pétrolier TotalEnergies, l'incapacité �
 | Menace Identifiée | Probabilité | Impact Métier | Sévérité |
 | :--- | :--- | :--- | :--- |
 | **Panne des Capteurs IoT** | Élevée (3/5) | Réception de données `NaN`, calculs statistiques faussés. | 🟠 Majeur |
-| **Échec Entraînement IA** | Moyenne (2/5) | Modèle désuet ne détectant pas les pannes de nouvelles pompes. | 🟠 Majeur |
+| **Échec Entraînement IA** | Moyenne (2/5) | Modèle désuet ne détectant pas les pannes des nouvelles locomotives. | 🟠 Majeur |
 | **Corruption Fichier CSV** | Faible (1/5) | Tableau de Bord Power BI indisponible (Écran technique). | 🔴 Critique |
 | **Perte Fichier Modèle (`.joblib`)**| Très Faible | Incapacité totale à prédire de la panne sur les flux futurs. | 🔴 Critique |
 
@@ -111,10 +111,10 @@ La résilience doit être prouvée.
 ## 🔧 ANNEXE TECHNIQUE
 ### Contacts d'Astreinte
 * **Responsable Technique :** Kameni Tchouatcheu (Ext. 06.XX.XX.XX.XX)
-* **Support DevOps :** support-it@totalenergies.com
+* **Support DevOps :** support-it@camrail.net
 
 ### Versions Validées en Production
 * **Python :** 3.12.x
 * **Numpy / Scikit-Learn :** Versions explicitement ancrées dans `requirements.txt`.
 
-*Ce document est la propriété de la Direction Supply & Logistique (Data Department). Dernière mise à jour : Février 2026 par G.B.K.T.*
+*Ce document est la propriété de la Direction Logistique Ferroviaire (Data Department). Dernière mise à jour : Février 2026 par G.B.K.T.*

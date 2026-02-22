@@ -26,7 +26,7 @@
 ## 🎯 VUE D'ENSEMBLE DU PROJET
 
 ### Contexte & Objectifs
-Ce projet démontre la mise en œuvre d'une architecture orientée Data Science pour la **Maintenance Prédictive** des pompes logistiques dans le domaine de l'énergie pétrolière. Il illustre les compétences suivantes :
+Ce projet démontre la mise en œuvre d'une architecture orientée Data Science pour la **Maintenance Prédictive** du matériel ferroviaire logistique (Camrail / Bolloré Logistics). Il illustre les compétences suivantes :
 
 ✅ **Machine Learning :** Entraînement d'un modèle Random Forest adapté aux classes déséquilibrées (pannes rares).
 ✅ **Feature Engineering :** Création métier de variables temporelles (moyennes glissantes, tendances thermiques).
@@ -75,7 +75,7 @@ graph TB
 ### Explication du Flux
 
 1. **Génération (Ingestion Systèmes)**
-   * Le script `data_generator.py` simule la télémétrie de dizaines de pompes (pression, vibration).
+   * Le script `data_generator.py` simule la télémétrie de dizaines de locomotives (pression d'huile, vibration d'essieux).
    * Insertion de patterns de pannes réalistes.
 2. **Traitement (Feature Engineering)**
    * Le script `data_processing.py` nettoie les flux CSV.
@@ -107,7 +107,7 @@ graph TB
 ### 🚀 Fonctionnalités Principales
 
 **1. Simulation Télémétrique Industrielle**
-* Flux de données dynamique (Date, ID Pompe, Débit, Pression, Vibration, Température, Panne binaire).
+* Flux de données dynamique (Date, ID Locomotive, Niveau de Fioul, Pression, Vibration, Température, Panne binaire).
 * Bruit Gaussien appliqué pour simuler l'usure naturelle.
 
 **2. Machine Learning de Précision**

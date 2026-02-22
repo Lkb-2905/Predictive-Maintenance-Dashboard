@@ -5,10 +5,10 @@ from datetime import datetime, timedelta
 from loguru import logger
 
 def generate_data(output_path, num_records=5000):
-    logger.info("🚀 Début : Génération de données synthétiques pour les pompes logistiques...")
+    logger.info("🚀 Début : Génération de données synthétiques pour les matériels ferroviaires (Camrail)...")
     np.random.seed(42)
     
-    # 10 pompes de dépôt logistique
+    # 10 locomotives de fret
     pump_ids = [f"PUMP_{i:03d}" for i in range(1, 11)]
     start_date = datetime.now() - timedelta(days=30)
     
