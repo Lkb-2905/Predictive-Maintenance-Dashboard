@@ -30,8 +30,9 @@ Ce projet démontre la mise en œuvre d'une architecture orientée Data Science 
 # 1. Naviguer dans le dossier du projet
 cd Predictive-Maintenance-Dashboard
 
-# 2. Créer l'environnement
-python -m venv env
+# 2. Créer l'environnement (Ajustement Pyenv Windows MSYS2)
+Remove-Item -Recurse -Force env -ErrorAction SilentlyContinue
+C:\Users\pc\.pyenv\pyenv-win\versions\3.12.10\python.exe -m venv env
 .\env\Scripts\activate
 
 # 3. Installer les dépendances
