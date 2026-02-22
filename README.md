@@ -49,6 +49,40 @@ Il illustre les compétences suivantes :
 
 ## 🏗️ ARCHITECTURE TECHNIQUE
 
+### Diagramme de Flux
+```mermaid
+graph TD
+    subgraph Client Layer
+        U[👤 Opérateur Logistique]
+        P[Power BI Dashboard]
+        U -->|Pilotage| P
+    end
+
+    subgraph Application Layer
+        G[Générateur Télémétrie]
+        T[Feature Engineering Pandas]
+        G -->|Nettoyage| T
+    end
+
+    subgraph Data Sources
+        S[Capteurs Locomotives]
+    end
+
+    subgraph Intelligence Layer
+        M[Python Engine<br>Scikit-Learn]
+    end
+
+    S -->|Signaux IoT| G
+    T -->|Variables temporelles| M
+    M -->|Prédictions| P
+
+    style P fill:#4FC3F7,color:#000
+    style G fill:#4CAF50,color:#fff
+    style T fill:#4CAF50,color:#fff
+    style M fill:#FFD600,color:#000
+    style S fill:#FF5252,color:#fff
+```
+
 ### Flux de Données Détaillé
 1. **Génération (Ingestion Systèmes)** : Le générateur `data_generator.py` simule la télémétrie globale des locomotives.
 2. **Traitement (Feature Engineering)** : Les données brutes sont nettoyées et agrégées en variables complexes (`data_processing.py`).
