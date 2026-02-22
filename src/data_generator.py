@@ -9,14 +9,14 @@ def generate_data(output_path, num_records=5000):
     np.random.seed(42)
     
     # 10 locomotives de fret
-    pump_ids = [f"PUMP_{i:03d}" for i in range(1, 11)]
+    loco_ids = [f"LOCO_{i:03d}" for i in range(1, 11)]
     start_date = datetime.now() - timedelta(days=30)
     
     timestamps = [start_date + timedelta(hours=i) for i in range(num_records)]
     
     data = []
     for ts in timestamps:
-        pump = np.random.choice(pump_ids)
+        loco = np.random.choice(loco_ids)
         
         # Base métriques normales
         flow_rate = np.random.normal(500, 50)     # Débit L/min
@@ -35,13 +35,17 @@ def generate_data(output_path, num_records=5000):
             if np.random.rand() > 0.3:
                 failure = 1 
                 
-        data.append([ts, pump, flow_rate, pressure, vibration, temperature, failure])
+        data.append([ts, loco, flow_rate, pressure, vibration, temperature, failure])
         
-    df = pd.DataFrame(data, columns=['timestamp', 'pump_id', 'flow_rate', 'pressure', 'vibration', 'temperature', 'failure'])
+    df = pd.DataFrame(data, columns=['timestamp', 'loco_id', 'flow_rate', 'pressure', 'vibration', 'temperature', 'failure'])
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    df.to_csv(output_path, index=False)
-    logger.success(f"✅ Données générées avec succès : {output_path} ({len(df)} lignes enregistrées)")
+    try:
+        df.to_csv(output_path, index=False)
+        logger.success(f"✅ Données générées avec succès : {output_path} ({len(df)} lignes enregistrées)")
+    except PermissionError:
+        logger.error(f"❌ IMPOSSIBLE D'ÉCRIRE LE FICHIER '{output_path}'.")
+        logger.error("👉 Il est actuellement OUVERT dans Power BI ou Excel ! Veuillez FERMER le logiciel qui le bloque et relancer la commande.")
 
 if __name__ == "__main__":
     # Définition du chemin relatif pour exécution depuis divers dossiers
