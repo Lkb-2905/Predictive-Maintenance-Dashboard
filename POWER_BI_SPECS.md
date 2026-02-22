@@ -27,8 +27,8 @@ Permettre à un Chef de Gare de Fret d'identifier en 5 secondes quelles locomoti
 
 ### Écran 2 : Vision Data Science (Zoom Ingénieur Maintenance)
 *C'est l'écran pour l'ingénieur de fiabilité*
-- **Line Chart (Courbes Multiples)** : Évolution chronologique des vibrations et pressions par *Pump_ID* lissée sur 3 périodes de temps.
-- **Scatter Plot (Nuage de Points)** : Corrélation entre l'Augmentation de la Température (Axe Y) et la Perte de Pression (Axe X). Permet au technicien de voir la "signature" thermique des pannes pétrolières.
+- **Line Chart (Courbes Multiples)** : Évolution chronologique des vibrations et pressions par *Loco_ID* lissée sur 3 périodes de temps.
+- **Scatter Plot (Nuage de Points)** : Corrélation entre l'Augmentation de la Température (Axe Y) et la Perte de Pression (Axe X). Permet au technicien de voir la "signature" thermique des pannes de moteurs ferroviaires.
 - **Tableau Détaillé** : 
     - Colonnes : *Machine_ID | Température | Vibrations Moyennes | **% de Risque (issu de Python)***
     - Formatage Conditionnel : Fond de la cellule en rouge vif dès que le risque dépasse 75%.
